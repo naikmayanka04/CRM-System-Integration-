@@ -1,0 +1,30 @@
+{
+  "name": "woo-crm",
+  "version": "0.3.1",
+  "private": true,
+  "type": "module",
+  "description": "Lightweight CRM that syncs WooCommerce customers/orders and recommends follow-ups for staff approval.",
+  "engines": { "node": ">=22.9" },
+  "scripts": {
+    "migrate": "node --env-file-if-exists=.env server/migrate.js",
+    "seed": "node --env-file-if-exists=.env server/seed.js",
+    "start": "node --env-file-if-exists=.env server/index.js",
+    "test": "node --env-file-if-exists=.env --test \"test/unit/*.test.js\" \"test/integration/*.test.js\"",
+    "test:unit": "node --test \"test/unit/*.test.js\"",
+    "test:e2e": "node --env-file-if-exists=.env --test \"test/e2e/*.e2e.js\"",
+    "web:dev": "vite web",
+    "web:build": "vite build web --outDir dist --emptyOutDir"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.0",
+    "playwright": "^1.56.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "vite": "^6.0.0"
+  }
+}
